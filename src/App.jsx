@@ -58,9 +58,9 @@ function useStoredState(key, fallback) {
   return [value, setValue]
 }
 
-function InstitutionalLogos() {
+function InstitutionalLogos({ className = '' }) {
   return (
-    <div className="institutional-logos" aria-label="Institutional logos">
+    <div className={`institutional-logos ${className}`} aria-label="Institutional logos">
       <div className="institutional-logo">
         <img src="/logos/rit-logo.jpeg" alt="Rajeev Institute of Technology logo" />
         <span>Rajeev Institute of Technology, Hassan</span>
@@ -193,6 +193,16 @@ function HomePage({ announcements, events, currentUser, registrations, onRegiste
           <div className="art-caption">CAMPUS LIFE, CONNECTED <span>01 — 06</span></div>
         </div>
         <div className="hero-bottom"><span>DISCOVER</span><span className="hero-bottom-line" /><span>YOUR NEXT CHAPTER STARTS HERE</span></div>
+      </section>
+
+      <section className="community-section" aria-labelledby="community-heading">
+        <div className="community-inner">
+          <div className="community-heading">
+            <p className="eyebrow">OUR CAMPUS PARTNERS</p>
+            <h2 id="community-heading">Powered by Our Campus Community</h2>
+          </div>
+          <InstitutionalLogos className="community-logos" />
+        </div>
       </section>
 
       <section className="trust-strip"><span>YOUR CAMPUS, ONE PLACE</span><strong>Events</strong><i /> <strong>People</strong><i /> <strong>Opportunities</strong><i /> <strong>Updates</strong></section>
