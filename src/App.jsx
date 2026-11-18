@@ -58,12 +58,12 @@ function useStoredState(key, fallback) {
   return [value, setValue]
 }
 
-function LogoPlaceholders({ compact = false }) {
+function LogoPlaceholders() {
   return (
-    <div className={`logo-placeholders${compact ? ' compact' : ''}`} aria-label="Institutional logo placeholders">
+    <div className="logo-placeholders" aria-label="Institutional logo placeholders">
       <div className="logo-placeholder rit"><span>RIT</span><small>Official logo</small></div>
       <div className="logo-placeholder cse"><span>CSE</span><small>Department logo</small></div>
-      <div className="logo-placeholder gdg"><span>GDG</span><small>On Campus logo</small></div>
+      <div className="logo-placeholder gdg"><span>GDG</span><small>Logo placeholder</small></div>
     </div>
   )
 }
@@ -78,11 +78,10 @@ function Header({ currentUser, onLogout, isAdmin }) {
   return (
     <header className="site-header">
       <div className="header-top">
-        <Link className="brand" to="/" aria-label="CampusConnect home">
-          <span className="brand-symbol"><GraduationCap size={24} /></span>
-          <span>Campus<span className="brand-accent">Connect</span><small>SMART STUDENT HUB</small></span>
+        <Link className="brand" to="/" aria-label="CampusConnect home — GDG on Campus official logo placeholder">
+          <span className="brand-symbol gdg-logo-placeholder"><span>GDG</span><small>LOGO PLACEHOLDER</small></span>
+          <span>Campus<span className="brand-accent">Connect</span><small>STUDENT HUB</small></span>
         </Link>
-        <LogoPlaceholders compact />
         <button className="menu-toggle icon-button" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
@@ -168,8 +167,10 @@ function HomePage({ announcements, events, currentUser, registrations, onRegiste
     <main>
       <section className="hero-section" id="home">
         <div className="hero-copy">
-          <div className="hero-kicker"><span className="live-dot" /> RAJIV INSTITUTE OF TECHNOLOGY · HASSAN</div>
-          <h1>Your campus,<br />closer than <span>ever.</span></h1>
+          <div className="hero-kicker"><span className="live-dot" /> CAMPUSCONNECT · STUDENT HUB</div>
+          <h1>GDG on Campus</h1>
+          <p className="hero-affiliation">– Rajiv Institute of Technology (RIT), Hassan</p>
+          <h2 className="hero-tagline">Your campus, closer than <span>ever.</span></h2>
           <p>From the next big campus event to the notes you need right now — find your student community, all in one place.</p>
           <div className="hero-buttons"><a className="button button-primary" href="#events">Explore campus <ArrowRight size={17} /></a><Link className="button button-outline" to="/portal">Open student hub <ArrowDownRight size={17} /></Link></div>
           <div className="hero-proof"><div className="proof-avatars"><span>R</span><span>C</span><span>+</span></div><p><strong>Made for RIT students</strong><br />A connected campus starts here</p></div>
