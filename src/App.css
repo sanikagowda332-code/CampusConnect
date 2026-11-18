@@ -29,17 +29,9 @@ a { color: inherit; }
 .header-top { min-height: 77px; max-width: 1280px; padding: 0 42px; margin: auto; display: flex; align-items: center; gap: 25px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--navy); font-family: Manrope, sans-serif; font-size: 17px; line-height: 1.15; font-weight: 800; white-space: nowrap; }
 .brand-symbol { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: #fff; background: var(--navy); }
-.brand-symbol.gdg-logo-placeholder { width: 62px; height: 40px; border: 1px dashed #9aaabc; border-radius: 6px; display: flex; flex-direction: column; gap: 2px; color: #4a6078; background: #f8fafc; line-height: 1; }
-.brand-symbol.gdg-logo-placeholder > span { font: 800 12px/1.1 Manrope, sans-serif; letter-spacing: .5px; }
-.brand-symbol.gdg-logo-placeholder small { margin: 0; color: #8190a1; font: 700 5px/1 'DM Sans', sans-serif; letter-spacing: .25px; }
+.brand-logo { width: 48px; height: 48px; flex: 0 0 auto; border: 1px solid #e6edf2; border-radius: 50%; object-fit: contain; background: #fff; }
 .brand-accent { color: #1672c4; }
 .brand small { display: block; margin-top: 4px; color: #91a0b0; font: 700 8px/1 'DM Sans', sans-serif; letter-spacing: 1.5px; }
-.logo-placeholders { display: flex; align-items: center; gap: 8px; }
-.logo-placeholder { min-width: 79px; min-height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1px; border: 1px dashed #9aaabc; border-radius: 6px; color: #4a6078; background: #f8fafc; line-height: 1; }
-.logo-placeholder span { font: 800 12px/1.1 Manrope, sans-serif; letter-spacing: .5px; }
-.logo-placeholder small { font-size: 7px; color: #8190a1; }
-.logo-placeholder.cse { border-color: #85b4ce; }
-.logo-placeholder.gdg { border-color: #a6aeb8; }
 .header-actions { display: flex; align-items: center; gap: 8px; }
 .main-nav { min-height: 43px; max-width: 1280px; padding: 0 42px; margin: auto; display: flex; align-items: center; gap: 26px; border-top: 1px solid #f1f3f6; }
 .main-nav a { color: #58677a; font-size: 12px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: color .2s; }
@@ -248,8 +240,9 @@ a { color: inherit; }
 .footer-links a:hover { color: #70d7dd; }
 .footer-contact p { display: grid; grid-template-columns: 18px 1fr; gap: 7px; align-items: start; color: #9eafbf; font-size: 9px; line-height: 1.7; }
 .footer-contact svg { color: #5bc4cc; }
-.footer-identity .logo-placeholder { min-width: 72px; min-height: 44px; color: #d4e1ea; border-color: #456078; background: #10263e; }
-.footer-identity .logo-placeholder small { color: #93a6b6; }
+.institutional-logos { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.institutional-logo { display: flex; align-items: center; gap: 10px; color: #c4d2df; font-size: 9px; line-height: 1.5; }
+.institutional-logo img { width: 54px; height: 54px; flex: 0 0 54px; border: 1px solid #e6edf2; border-radius: 6px; object-fit: contain; background: #fff; }
 .footer-bottom { min-height: 43px; padding: 10px 42px; border-top: 1px solid #ffffff18; display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #8195a8; font-size: 8px; }
 
 .auth-page { min-height: 650px; display: grid; grid-template-columns: 43% 57%; background: #f6f9fb; }
@@ -458,6 +451,7 @@ a { color: inherit; }
   .announcement-layout { gap: 35px; }
   .campus-section-inner { gap: 38px; }
   .footer-main { grid-template-columns: 1fr 1fr; row-gap: 30px; }
+  .footer-identity { grid-column: 1 / -1; }
   .auth-page { grid-template-columns: 36% 64%; }
   .auth-aside { padding: 50px 30px; }
   .auth-card-wrap { padding-inline: 22px; }
@@ -469,9 +463,7 @@ a { color: inherit; }
   .header-top { min-height: 63px; padding-inline: 15px; gap: 10px; }
   .brand { gap: 7px; font-size: 13px; }
   .brand-symbol { width: 34px; height: 34px; border-radius: 10px; }
-  .brand-symbol.gdg-logo-placeholder { width: 48px; height: 34px; }
-  .brand-symbol.gdg-logo-placeholder > span { font-size: 10px; }
-  .brand-symbol.gdg-logo-placeholder small { font-size: 4px; }
+  .brand-logo { width: 38px; height: 38px; }
   .brand small { font-size: 7px; }
   .header-actions .button { min-height: 33px; padding-inline: 9px; font-size: 9px; }
   .header-actions .button svg { display: none; }
@@ -535,8 +527,7 @@ a { color: inherit; }
   .contact-inner h2 { font-size: 32px; }
   .footer-main { padding: 35px 21px 28px; grid-template-columns: 1fr 1fr; gap: 25px 18px; }
   .footer-brand { grid-column: 1/-1; }
-  .footer-identity .logo-placeholders { gap: 4px; }
-  .footer-identity .logo-placeholder { min-width: 56px; }
+  .footer-identity { grid-column: 1/-1; }
   .footer-bottom { padding: 12px 20px; align-items: flex-start; flex-direction: column; gap: 6px; font-size: 8px; }
   .auth-page { min-height: 0; display: block; }
   .auth-aside { display: none; }

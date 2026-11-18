@@ -58,12 +58,21 @@ function useStoredState(key, fallback) {
   return [value, setValue]
 }
 
-function LogoPlaceholders() {
+function InstitutionalLogos() {
   return (
-    <div className="logo-placeholders" aria-label="Institutional logo placeholders">
-      <div className="logo-placeholder rit"><span>RIT</span><small>Official logo</small></div>
-      <div className="logo-placeholder cse"><span>CSE</span><small>Department logo</small></div>
-      <div className="logo-placeholder gdg"><span>GDG</span><small>Logo placeholder</small></div>
+    <div className="institutional-logos" aria-label="Institutional logos">
+      <div className="institutional-logo">
+        <img src="/logos/rit-logo.jpeg" alt="Rajeev Institute of Technology logo" />
+        <span>Rajeev Institute of Technology, Hassan</span>
+      </div>
+      <div className="institutional-logo">
+        <img src="/logos/cse-logo.jpeg" alt="Computer Science and Engineering department logo" />
+        <span>Department of Computer Science and Engineering</span>
+      </div>
+      <div className="institutional-logo">
+        <img src="/logos/gdg-logo.jpeg" alt="GDG on Campus logo" />
+        <span>GDG on Campus</span>
+      </div>
     </div>
   )
 }
@@ -78,8 +87,8 @@ function Header({ currentUser, onLogout, isAdmin }) {
   return (
     <header className="site-header">
       <div className="header-top">
-        <Link className="brand" to="/" aria-label="CampusConnect home — GDG on Campus official logo placeholder">
-          <span className="brand-symbol gdg-logo-placeholder"><span>GDG</span><small>LOGO PLACEHOLDER</small></span>
+        <Link className="brand" to="/" aria-label="CampusConnect home">
+          <img className="brand-symbol brand-logo" src="/logos/gdg-logo.jpeg" alt="GDG on Campus logo" />
           <span>Campus<span className="brand-accent">Connect</span><small>STUDENT HUB</small></span>
         </Link>
         <button className="menu-toggle icon-button" aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)}>
@@ -113,7 +122,7 @@ function Footer() {
         </div>
         <div className="footer-links"><strong>Explore</strong><a href="/#about">About RIT</a><a href="/#events">Events</a><a href="/#announcements">Announcements</a><a href="/#contact">Contact</a></div>
         <div className="footer-contact"><strong>Find us</strong><p><MapPin size={16} /> Rajiv Institute of Technology<br />Hassan, Karnataka, India</p><p><Mail size={16} /> CampusConnect student hub</p></div>
-        <div className="footer-identity"><strong>Institutional partners</strong><LogoPlaceholders /></div>
+        <div className="footer-identity"><strong>Institutional partners</strong><InstitutionalLogos /></div>
       </div>
       <div className="footer-bottom"><span>© 2026 CampusConnect · Student demo platform</span><span>Not an official RIT authentication or information service.</span></div>
     </footer>
@@ -169,7 +178,7 @@ function HomePage({ announcements, events, currentUser, registrations, onRegiste
         <div className="hero-copy">
           <div className="hero-kicker"><span className="live-dot" /> CAMPUSCONNECT · STUDENT HUB</div>
           <h1>GDG on Campus</h1>
-          <p className="hero-affiliation">– Rajiv Institute of Technology (RIT), Hassan</p>
+          <p className="hero-affiliation">– Rajeev Institute of Technology (RIT), Hassan</p>
           <h2 className="hero-tagline">Your campus, closer than <span>ever.</span></h2>
           <p>From the next big campus event to the notes you need right now — find your student community, all in one place.</p>
           <div className="hero-buttons"><a className="button button-primary" href="#events">Explore campus <ArrowRight size={17} /></a><Link className="button button-outline" to="/portal">Open student hub <ArrowDownRight size={17} /></Link></div>
